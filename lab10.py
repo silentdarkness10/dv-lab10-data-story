@@ -99,7 +99,9 @@ bars = ax.barh(df["Skill"], df["Average rating"], color=colors)
 
 ax.set_xlim(0, 5)                      # zero baseline, full 1-5 scale visible
 ax.set_xticks(range(0, 6))
-ax.set_xlabel("Average self-rating (1 = beginner, 5 = confident)")
+# Changed after feedback: a reader was unsure why the axis starts at 0 when
+# the scale is 1-5, so the label now says bars are drawn from 0.
+ax.set_xlabel("Average self-rating (1 = beginner, 5 = confident; bars drawn from 0)")
 ax.set_title(f"{weakest} received the lowest average rating", loc="left")
 ax.invert_yaxis()
 # Removed: the vertical grid lines. Bars are labelled directly, so the grid
